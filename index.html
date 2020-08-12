@@ -14,8 +14,12 @@
 </head>
 
 <body>
-  <header>
-    <h2>Student Grade Table</h2>
+  <header class="row">
+    <h2 class="col-sm">Student Grade Table</h2>
+    <h2 class="col-3">
+      Average Grade
+      <div class="badge badge-secondary" id="average-badge"></div>
+    </h2>
   </header>
   <table class="table table-striped">
     <thead class="thead-light">
@@ -34,6 +38,7 @@
     crossorigin="anonymous"></script>
   <script src="components/app.js"></script>
   <script src="components/grade-table.js"></script>
+  <script src="components/page-header.js"></script>
   <script src="main.js"></script>
 </body>
 
