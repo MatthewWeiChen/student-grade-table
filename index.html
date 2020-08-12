@@ -5,40 +5,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg=="
     crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+    crossorigin="anonymous" />
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <header class="row">
-    <h2 class="col-sm">Student Grade Table</h2>
-    <h2 class="col-3">
-      Average Grade
-      <div class="badge badge-secondary" id="average-badge"></div>
-    </h2>
-  </header>
-  <table class="table table-striped">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">Student Name</th>
-        <th scope="col">Course</th>
-        <th scope="col">Grade</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="container">
+    <header class="row">
+      <h2 class="col-sm">Student Grade Table</h2>
+      <h2 class="col-4">
+        Average Grade
+        <div class="badge badge-secondary" id="average-badge"></div>
+      </h2>
+    </header>
+    <section class="row">
+      <table class="table table-striped col-9">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Student Name</th>
+            <th scope="col">Course</th>
+            <th scope="col">Grade</th>
+          </tr>
+        </thead>
+        <tbody>
 
-    </tbody>
-  </table>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        </tbody>
+      </table>
+      <form class="col-3 form-collection">
+        <div class="form-group row">
+          <i class="fas fa-user fa-2x col-3"></i>
+          <input name="name" class="form-control col" id="name" placeholder="Name">
+        </div>
+        <div class="form-group row">
+          <i class="far fa-list-alt fa-2x col-3"></i>
+          <input name="course" class="form-control col" id="course" placeholder="Course">
+        </div>
+        <div class="form-group row">
+          <i class="fa fa-graduation-cap fa-2x col-3"></i>
+          <input name="grade" class="form-control col" placeholder="Grade">
+        </div>
+        <div class="container">
+          <button type="submit" class="btn btn-primary col-4 ml-4">Add</button>
+          <button type="reset" class="btn btn-primary col-5 ml-3">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </div>
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
     crossorigin="anonymous"></script>
   <script src="components/app.js"></script>
   <script src="components/grade-table.js"></script>
   <script src="components/page-header.js"></script>
+  <script src="components/grade-form.js"></script>
   <script src="main.js"></script>
 </body>
 
