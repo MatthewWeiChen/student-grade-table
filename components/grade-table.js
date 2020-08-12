@@ -19,4 +19,31 @@ class GradeTable {
       tbody.append(row);
     }
   }
+  onDeleteClick(deleteGrade) {
+    this.deleteGrade = deleteGrade;
+  }
+
+  renderGradeRow(data, deleteGrade) {
+    var tbody = this.tableElement.querySelector('tbody');
+    for (var i = 0; i < data.length; i++) {
+      var dataRow = document.createElement('tr');
+      var nameCol = document.createElement('td');
+      nameCol.textContent = data[i].name;
+      var courseCol = document.createElement('td');
+      courseCol.textContent = data[i].course;
+      var gradeCol = document.createElement('td');
+      gradeCol.textContent = data[i].grade;
+      var deleteHolder = document.createElement('td');
+      var deleteBtn = document.createElement('button');
+      deleteBtn.addEventListener('click', function () {
+        deleteGrade(data.id);
+      })
+      deleteHolder.append(deleteBtn);
+      dataRow.append(nameCol);
+      dataRow.append(courseCol);
+      dataRow.append(gradeCol);
+      dataRow.append(deleteHolder);
+      tbody.append(dataRow);
+    }
+  }
 }
