@@ -19,7 +19,7 @@
   <div class="container">
     <header class="row">
       <h2 class="col-sm">Student Grade Table</h2>
-      <h2 class="col-4">
+      <h2 class="col-5">
         Average Grade
         <div class="badge badge-secondary" id="average-badge"></div>
       </h2>
@@ -39,24 +39,28 @@
         </tbody>
 
       </table>
-      <form class="col-3 form-collection">
-        <div class="form-group row">
-          <i class="fas fa-user fa-2x col-3"></i>
-          <input name="name" class="form-control col" id="name" placeholder="Name">
-        </div>
-        <div class="form-group row">
-          <i class="far fa-list-alt fa-2x col-3"></i>
-          <input name="course" class="form-control col" id="course" placeholder="Course">
-        </div>
-        <div class="form-group row">
-          <i class="fa fa-graduation-cap fa-2x col-3"></i>
-          <input name="grade" class="form-control col" placeholder="Grade">
-        </div>
-        <div class="container">
-          <button type="submit" class="btn btn-primary col-4 ml-4">Add</button>
-          <button type="reset" class="btn btn-primary col-5 ml-3">Cancel</button>
-        </div>
-      </form>
+      <div class="container col-3">
+        <form class=" form-collection">
+          <div class="form-group row">
+            <i class="fas fa-user fa-2x mr-3"></i>
+            <input name="name" class="form-control col-sm ml-1" id="name" placeholder="Name">
+          </div>
+          <div class="form-group row">
+            <i class="far fa-list-alt fa-2x mr-3"></i>
+            <input name="course" class="form-control col-sm" id="course" placeholder="Course">
+          </div>
+          <div class="form-group row">
+            <i class="fa fa-graduation-cap fa-2x mr-2"></i>
+            <input name="grade" class="form-control col-sm" placeholder="Grade">
+          </div>
+          <div class="row">
+            <div class="col">
+              <button type=" submit" class="btn btn-primary">Add</button>
+              <button type="reset" class="btn btn-secondary">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </section>
     <p class="no-grades">No Grades Recorded</p>
   </div>

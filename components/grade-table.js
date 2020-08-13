@@ -40,7 +40,7 @@ class GradeTable {
     deleteBtn.addEventListener('click', function () {
       deleteGrade(data.id);
     })
-    deleteBtn.setAttribute('class', 'btn btn-danger')
+    deleteBtn.setAttribute('class', 'btn btn-outline-danger')
     deleteHolder.append(deleteBtn);
     dataRow.append(nameCol, courseCol, gradeCol, deleteHolder)
     return dataRow;
