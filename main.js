@@ -1,5 +1,6 @@
 var tableSelect = document.querySelector('.table');
-var table = new GradeTable(tableSelect);
+var paragraphSelect = document.querySelector('p');
+var table = new GradeTable(tableSelect, paragraphSelect);
 var headerSelect = document.querySelector('header');
 var pageHeader = new PageHeader(headerSelect);
 var formSelect = document.querySelector('.form-collection');
