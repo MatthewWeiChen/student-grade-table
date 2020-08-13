@@ -1,49 +1,49 @@
 class GradeTable {
-  constructor(tableElement) {
+  constructor(tableElement, noGradesElement) {
     this.tableElement = tableElement;
+    this.noGradesElement = noGradesElement;
+    this.onDeleteClick = this.onDeleteClick.bind(this);
   }
   updateGrades(grades) {
     var tbody = this.tableElement.querySelector('tbody');
+    var paragraphElement = document.querySelector('p');
     tbody.textContent = null;
-    for (var i = 0; i < grades.length; i++) {
-      var row = document.createElement('tr');
-      var col1 = document.createElement('td');
-      col1.textContent = grades[i].name;
-      var col2 = document.createElement('td');
-      col2.textContent = grades[i].course;
-      var col3 = document.createElement('td');
-      col3.textContent = grades[i].grade;
-      row.append(col1);
-      row.append(col2);
-      row.append(col3);
-      tbody.append(row);
+
+    if (grades.length === 0) {
+      paragraphElement.classList.remove('d-none')
+    } else {
+      paragraphElement.classList.add('d-none')
     }
+
+    for (var i = 0; i < grades.length; i++) {
+      var tableRow = this.renderGradeRow(grades[i], this.deleteGrade);
+      tbody.append(tableRow);
+    }
+
   }
+
   onDeleteClick(deleteGrade) {
     this.deleteGrade = deleteGrade;
   }
-
   renderGradeRow(data, deleteGrade) {
-    var tbody = this.tableElement.querySelector('tbody');
-    for (var i = 0; i < data.length; i++) {
-      var dataRow = document.createElement('tr');
-      var nameCol = document.createElement('td');
-      nameCol.textContent = data[i].name;
-      var courseCol = document.createElement('td');
-      courseCol.textContent = data[i].course;
-      var gradeCol = document.createElement('td');
-      gradeCol.textContent = data[i].grade;
-      var deleteHolder = document.createElement('td');
-      var deleteBtn = document.createElement('button');
-      deleteBtn.addEventListener('click', function () {
-        deleteGrade(data.id);
-      })
-      deleteHolder.append(deleteBtn);
-      dataRow.append(nameCol);
-      dataRow.append(courseCol);
-      dataRow.append(gradeCol);
-      dataRow.append(deleteHolder);
-      tbody.append(dataRow);
-    }
+    var dataRow = document.createElement('tr');
+    var nameCol = document.createElement('td');
+    var courseCol = document.createElement('td');
+    var gradeCol = document.createElement('td');
+    var deleteHolder = document.createElement('td');
+    var deleteBtn = document.createElement('button');
+
+    nameCol.textContent = data.name;
+    courseCol.textContent = data.course;
+    gradeCol.textContent = data.grade;
+    deleteBtn.textContent = 'Delete';
+    deleteBtn.addEventListener('click', function () {
+      deleteGrade(data.id);
+    })
+    deleteBtn.setAttribute('class', 'btn btn-danger')
+    deleteHolder.append(deleteBtn);
+    dataRow.append(nameCol, courseCol, gradeCol, deleteHolder)
+    return dataRow;
+
   }
 }
