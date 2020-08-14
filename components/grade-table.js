@@ -16,6 +16,7 @@ class GradeTable {
     }
 
     for (var i = 0; i < grades.length; i++) {
+      console.log(this);
       var tableRow = this.renderGradeRow(grades[i], this.deleteGrade);
       tbody.append(tableRow);
     }
@@ -33,6 +34,8 @@ class GradeTable {
     var deleteHolder = document.createElement('td');
     var deleteBtn = document.createElement('button');
 
+    dataRow.setAttribute('scope', 'row');
+
     nameCol.textContent = data.name;
     courseCol.textContent = data.course;
     gradeCol.textContent = data.grade;
@@ -40,7 +43,7 @@ class GradeTable {
     deleteBtn.addEventListener('click', function () {
       deleteGrade(data.id);
     })
-    deleteBtn.setAttribute('class', 'btn btn-danger')
+    deleteBtn.setAttribute('class', 'btn btn-outline-danger')
     deleteHolder.append(deleteBtn);
     dataRow.append(nameCol, courseCol, gradeCol, deleteHolder)
     return dataRow;
